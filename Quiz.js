@@ -7,7 +7,7 @@ const resetBtn=document.getElementById("reset");
 const results=document.getElementById("results");
 
 const storage=new Storage("quiz_app");
-let userAnswers=storage.loadAll()||{};
+let userAnswers=storage.loadAll()||{}
 
 function calcScore(){
   let score=0;
@@ -18,5 +18,19 @@ function calcScore(){
   });
   return score;
 }
+function showResult(score){
+  const total=questions.length;
+  const percent=(score/ total)*100;
+
+  if(percent>=70){
+    results.textContent= `✅ Passed! You got ${score}/${total} (${percent.toFixed(0)}%)`;
+  } else{
+    results.textContent= `❌ Failed! You got ${score}/${total} (${percent.toFixed(0)}%)`;
+  }
+}
+
+function render(){}
+
+
 
 
