@@ -5,4 +5,7 @@ export default class Question {
     this.options = options;
     this.correctAns = correctAns;
   }
+  isCorrect(answer){
+    return answer===this.correctAns;
+  }
 }
