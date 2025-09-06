@@ -30,6 +30,15 @@ function showResult(score){
 }
 
 function render(){}
+submitBtn.addEventListener('click',()=>{
+    const score=calcScore();
+    showResult(score);
+})
+resetBtn.addEventListener('click',()=>{
+    storage.clearAll();
+    userAnswers={};
+})
+
 
 
 
