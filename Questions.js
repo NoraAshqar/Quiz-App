@@ -38,4 +38,33 @@ export const questions = [
     "To attach an event handler to an element",
     "To change an element's class name"], 
   "To attach an event handler to an element"
-)];
+),
+  new Question(6, 
+    "How do you call a JavaScript function named myFunction?", 
+    ["call myFunction();", "run myFunction();", "execute myFunction();", "myFunction();"],
+     "myFunction();"
+    ),
+  new Question(7,
+     "Which of the following is an example of a higher-order function?",
+      [
+    "if (true) { console.log('Hi'); }",
+    "function sayHi() { console.log('Hi'); }",
+    "setTimeout(() => console.log('Hi'), 1000)",
+    "const x = 5 + 3;"], 
+  "setTimeout(() => console.log('Hi'), 1000)"
+),
+  new Question(8, 
+    "True/False: Arrow functions do NOT have their own this", 
+    ["True", "False" ],
+     "True"
+    ),
+  new Question(9,
+     "True/False: Can a function return another function in JavaScript?",
+      ["True", "False"],
+       "True"),
+  new Question(10, 
+    "What does the following code return? (() => 5 + 3)();",
+     ["undefined", "function", "8", "NaN"], 
+     "8"
+    )
+];
