@@ -29,7 +29,42 @@ function showResult(score){
   }
 }
 
-function render(){}
+function render(){
+  quiz.innerHTML="";
+  questions.forEach((e)=>{
+    const container =document.createElement("div");
+    container.classList.add("question");
+    container.dataset.id =e.id;
+
+    const title =document.createElement("p");
+    title.textContent =e.text;
+    container.append(title);
+
+    e.options.forEach((opt)=>{
+      const label=document.createElement("label");
+      const input=document.createElement("input");
+      input.type="radio";
+      input.name=`question-${e.id}`;
+      input.value=opt;
+
+      if(userAnswers[e.id]===opt) {
+        input.checked=true;
+      }
+
+      input.addEventListener("change",()=>{
+        userAnswers[e.id] =opt;
+        storage.saveAll(userAnswers);
+      })
+
+      label.append(input);
+      label.append(document.createTextNode(opt));
+      container.append(label);
+      container.append(document.createElement("br"));
+    })
+
+    quiz.append(container);
+  })
+}
 submitBtn.addEventListener('click',()=>{
     const score=calcScore();
     showResult(score);
@@ -37,8 +72,10 @@ submitBtn.addEventListener('click',()=>{
 resetBtn.addEventListener('click',()=>{
     storage.clearAll();
     userAnswers={};
+    render();
+    results.textContent="";
 })
-
+render();
 
 
 
