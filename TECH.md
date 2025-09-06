@@ -21,7 +21,8 @@ QuizApp/
 ├── Storage.js          # Storage class for localStorage management
 ├── Quiz.js             # Quiz logic, rendering, and event handling
 ├── README.md           # Project documentation
-└── TECHNICAL_REQUIREMENTS.md # This technical requirements document
+├── TECHNICAL_REQUIREMENTS.md # This technical requirements document
+└── digram.png          # Flowchart of Quiz.js
 
 ```
 
